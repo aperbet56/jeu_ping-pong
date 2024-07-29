@@ -97,7 +97,7 @@ const movePaddle = (e) => {
 // Ecoute de l'évément "mousemove" sur le canvas et appel de la fonction movePaddle
 canvas.addEventListener("mousemove", movePaddle);
 
-// Rechercher si collision entre la balle et la raquette
+// Déclaration de la fonction collision qui va permettre de rechercher s'il y a collision entre la balle et la raquette
 const collision = (b, p) => {
   return (
     b.x + b.radius > p.x &&
