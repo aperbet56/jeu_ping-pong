@@ -6,7 +6,7 @@ J'ai codé un projet (en HTML5, CSS3 et JavaScript) dans lequel l'utilisateur va
 
 ## Démonstration
 
-Lien vers le projet :
+Lien vers le projet : https://aperbet56.github.io/jeu_ping-pong/
 
 ## Développez avec
 
