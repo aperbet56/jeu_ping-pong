@@ -3,6 +3,7 @@
 ## Le challenge
 
 J'ai codé un projet (en HTML5, CSS3 et JavaScript) dans lequel l'utilisateur va pouvoir jouer au ping-pong (tennis de table) face à l'ordinateur.
+Pour rendre le jeu plus facile, j'ai ajusté la vitesse de la raquette de l'ordinateur pour la rendre moins réactive au mouvement de la balle.
 
 ## Démonstration
 
