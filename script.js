@@ -51,17 +51,17 @@ const drawText = (
   context.fillText(text, x, y);
 };
 
-// Déclaration de la fonction createPaddle qui va permettre de créer un paddle
+// Déclaration de la fonction createPaddle qui va permettre de créer une raquette
 const createPaddle = (x, y, width, height, color) => {
   return { x, y, width, height, color, score: 0 };
 };
 
-//  Déclaration de la focntion create Ball qui va permettre de créer une balle
+//  Déclaration de la focntion createBall qui va permettre de créer une balle
 const createBall = (x, y, radius, velocityX, velocityY, color) => {
   return { x, y, radius, velocityX, velocityY, color, speed: initialBallSpeed };
 };
 
-// Définer utilisateur et ordinateur paddle objects
+// Définer utilisateur et ordinateur paddle objects (raquette)
 const user = createPaddle(
   0,
   canvas.height / 2 - paddleHeight / 2,
@@ -88,7 +88,7 @@ const ball = createBall(
   "WHITE"
 );
 
-// Déclaration de la fonction movePaddle qui va permettre de bouger le paddle
+// Déclaration de la fonction movePaddle qui va permettre de bouger la raquette
 const movePaddle = (e) => {
   const rect = canvas.getBoundingClientRect();
   user.y = e.clientY - rect.top - user.height / 2;
@@ -97,7 +97,7 @@ const movePaddle = (e) => {
 // Ecoute de l'évément "mousemove" sur le canvas et appel de la fonction movePaddle
 canvas.addEventListener("mousemove", movePaddle);
 
-// Rechercher si collision entre la balle et le paddle
+// Rechercher si collision entre la balle et la raquette
 const collision = (b, p) => {
   return (
     b.x + b.radius > p.x &&
@@ -134,7 +134,7 @@ const update = () => {
   ball.x += ball.velocityX;
   ball.y += ball.velocityY;
 
-  //Mise à jour de la position du paddle de l'ordinateur en fonction de la position de la balle
+  //Mise à jour de la position de la raquette de l'ordinateur en fonction de la position de la balle
   com.y += (ball.y - (com.y + com.height / 2)) * 0.05;
 
   // Haut et bas des murs
@@ -142,7 +142,7 @@ const update = () => {
     ball.velocityY = -ball.velocityY;
   }
 
-  // Détermine quel paddle commence à toucher la balle et gérer la collision
+  // Détermine quelle raquette commence à toucher la balle et gérer la collision
   let player = ball.x + ball.radius < canvas.width / 2 ? user : com;
   if (collision(ball, player)) {
     const collidePoint = ball.y - (player.y + player.height / 2);
@@ -184,7 +184,7 @@ const render = () => {
     "bold"
   );
 
-  // Appels de la fonction drawRect pour dessiner les paddles
+  // Appels de la fonction drawRect pour dessiner les raquettes
   drawRect(user.x, user.y, user.width, user.height, user.color);
   drawRect(com.x, com.y, com.width, com.height, com.color);
 
